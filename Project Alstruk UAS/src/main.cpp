@@ -300,6 +300,11 @@ int main() {
     int pilihan;
 
     do {
+
+        
+        cout << "====================================";
+        cout << "\n SISTEM MANAJEMEN EVENT KAMPUS";
+        cout << "\n====================================";
         cout << "\n1. Tambah Event";
         cout << "\n2. Lihat Event";
         cout << "\n3. Daftar Peserta";
@@ -310,6 +315,40 @@ int main() {
         cout << "\nPilihan : ";
 
         cin >> pilihan;
+
+            switch (pilihan) {
+
+        case 1:
+            sistem.tambahEvent();
+            break;
+
+        case 2:
+            sistem.tampilkanEvent();
+            break;
+
+        case 3:
+            sistem.daftarPeserta();
+            break;
+
+        case 4:
+            sistem.lihatPeserta();
+            break;
+
+        case 5:
+            sistem.cariEvent();
+            break;
+
+        case 6:
+            sistem.hapusEvent();
+            break;
+
+        case 7:
+            cout << "\nProgram selesai.\n";
+            break;
+
+        default:
+            cout << "\nPilihan tidak valid.\n";
+        }
 
     } while (pilihan != 7);
 
