@@ -132,10 +132,92 @@ public:
     }
     // Anggota 3
     void daftarPeserta() {}
+     if (head == NULL) {
+            cout << "\nBelum ada event.\n";
+            return;
+        }
+
+        int id;
+
+        cout << "\nMasukkan ID Event : ";
+        cin >> id;
+        cin.ignore();
+
+        Event* temp = head;
+
+        while (temp != NULL) {
+
+            if (temp->id == id) {
+
+                Peserta p;
+
+                cout << "Nama Peserta : ";
+                getline(cin, p.nama);
+
+                cout << "Prodi/Jurusan : ";
+                getline(cin, p.prodi);
+
+                temp->peserta.push(p);
+
+                cout << "\nPendaftaran berhasil.\n";
+                return;
+            }
+
+            temp = temp->next;
+        }
+
+        cout << "\nEvent tidak ditemukan.\n";
+    }
 
     // Anggota 3
     void lihatPeserta() {}
+       if (head == NULL) {
+            cout << "\nBelum ada event.\n";
+            return;
+        }
 
+        int id;
+
+        cout << "\nMasukkan ID Event : ";
+        cin >> id;
+
+        Event* temp = head;
+
+        while (temp != NULL) {
+
+            if (temp->id == id) {
+
+                cout << "\n===== DAFTAR PESERTA =====\n";
+                cout << "Event : " << temp->namaEvent << endl;
+
+                if (temp->peserta.empty()) {
+                    cout << "Belum ada peserta.\n";
+                    return;
+                }
+
+                queue<Peserta> salinan = temp->peserta;
+
+                int no = 1;
+
+                while (!salinan.empty()) {
+
+                    Peserta p = salinan.front();
+
+                    cout << "\nPeserta " << no++ << endl;
+                    cout << "Nama  : " << p.nama << endl;
+                    cout << "Prodi : " << p.prodi << endl;
+
+                    salinan.pop();
+                }
+
+                return;
+            }
+
+            temp = temp->next;
+        }
+
+        cout << "\nEvent tidak ditemukan.\n";
+    }
     // Anggota 4
     void cariEvent() {}
 
