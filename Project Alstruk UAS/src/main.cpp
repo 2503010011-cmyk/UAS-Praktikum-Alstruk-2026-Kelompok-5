@@ -258,7 +258,41 @@ public:
 
     // Anggota 5
     void hapusEvent() {}
+     if (head == NULL) {
+            cout << "\nBelum ada event.\n";
+            return;
+        }
+
+        int id;
+
+        cout << "\nMasukkan ID Event : ";
+        cin >> id;
+
+        Event* temp = head;
+        Event* prev = NULL;
+
+        while (temp != NULL && temp->id != id) {
+            prev = temp;
+            temp = temp->next;
+        }
+
+        if (temp == NULL) {
+            cout << "\nEvent tidak ditemukan.\n";
+            return;
+        }
+
+        if (prev == NULL)
+            head = head->next;
+        else
+            prev->next = temp->next;
+
+        delete temp;
+
+        cout << "\nEvent berhasil dihapus.\n";
+    }
 };
+
+
 
 int main() {
 
