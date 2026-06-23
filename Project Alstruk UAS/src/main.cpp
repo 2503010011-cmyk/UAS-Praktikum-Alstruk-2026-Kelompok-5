@@ -220,8 +220,43 @@ public:
     }
     // Anggota 4
     void cariEvent() {}
+    if (head == NULL) {
+            cout << "\nBelum ada event.\n";
+            return;
+        }
 
-    // Anggota 4
+        cin.ignore();
+
+        string keyword;
+
+        cout << "\nMasukkan Nama Event : ";
+        getline(cin, keyword);
+
+        Event* temp = head;
+
+        bool ditemukan = false;
+
+        while (temp != NULL) {
+
+            if (temp->namaEvent.find(keyword) != string::npos) {
+
+                cout << "\n===== EVENT DITEMUKAN =====\n";
+                cout << "ID      : " << temp->id << endl;
+                cout << "Nama    : " << temp->namaEvent << endl;
+                cout << "Tanggal : " << temp->tanggal << endl;
+                cout << "Lokasi  : " << temp->lokasi << endl;
+
+                ditemukan = true;
+            }
+
+            temp = temp->next;
+        }
+
+        if (!ditemukan)
+            cout << "\nEvent tidak ditemukan.\n";
+    }
+
+    // Anggota 5
     void hapusEvent() {}
 };
 
