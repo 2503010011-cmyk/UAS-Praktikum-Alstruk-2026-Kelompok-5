@@ -41,10 +41,95 @@ public:
 
     // Anggota 2
     void tambahEvent() {}
+    Event* baru = new Event;
+        baru->id = nextId++;
 
+        cin.ignore();
+
+        cout << "\n===== TAMBAH EVENT =====\n";
+
+        cout << "Nama Event : ";
+        getline(cin, baru->namaEvent);
+
+        cout << "Tanggal : ";
+        getline(cin, baru->tanggal);
+
+        cout << "Lokasi : ";
+        getline(cin, baru->lokasi);
+
+        cout << "Jumlah Panitia (Maks 5): ";
+        cin >> baru->jumlahPanitia;
+        cin.ignore();
+
+        if (baru->jumlahPanitia > 5)
+            baru->jumlahPanitia = 5;
+
+        for (int i = 0; i < baru->jumlahPanitia; i++) {
+
+            cout << "\nPanitia ke-" << i + 1 << endl;
+
+            cout << "Nama : ";
+            getline(cin, baru->panitia[i].nama);
+
+            cout << "Jabatan : ";
+            getline(cin, baru->panitia[i].jabatan);
+        }
+
+        baru->next = NULL;
+
+        if (head == NULL) {
+            head = baru;
+        }
+        else {
+
+            Event* temp = head;
+
+            while (temp->next != NULL)
+                temp = temp->next;
+
+            temp->next = baru;
+        }
+
+        cout << "\nEvent berhasil ditambahkan.\n";
+    }
     // Anggota 2
     void tampilkanEvent() {}
+    if (head == NULL) {
+            cout << "\nBelum ada event.\n";
+            return;
+        }
 
+        Event* temp = head;
+
+        cout << "\n========== DAFTAR EVENT ==========\n";
+
+        while (temp != NULL) {
+
+            cout << "\nID Event : " << temp->id;
+            cout << "\nNama     : " << temp->namaEvent;
+            cout << "\nTanggal  : " << temp->tanggal;
+            cout << "\nLokasi   : " << temp->lokasi;
+
+            cout << "\n\nStruktur Panitia:\n";
+
+            for (int i = 0; i < temp->jumlahPanitia; i++) {
+
+                cout << "- "
+                     << temp->panitia[i].nama
+                     << " ("
+                     << temp->panitia[i].jabatan
+                     << ")\n";
+            }
+
+            cout << "Jumlah Peserta : "
+                 << temp->peserta.size()
+                 << endl;
+
+            cout << "\n------------------------------\n";
+
+            temp = temp->next;
+        }
+    }
     // Anggota 3
     void daftarPeserta() {}
 
