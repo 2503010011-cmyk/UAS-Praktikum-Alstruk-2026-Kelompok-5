@@ -39,8 +39,8 @@ public:
         nextId = 1;
     }
 
-    // Anggota 2
-    void tambahEvent() {}
+    // Fawwaz: Fitur Tambah Event
+    void tambahEvent() {
     Event* baru = new Event;
         baru->id = nextId++;
 
@@ -92,8 +92,8 @@ public:
 
         cout << "\nEvent berhasil ditambahkan.\n";
     }
-    // Anggota 2
-    void tampilkanEvent() {}
+    // Fawwaz: Fitur Tampilkan Event
+    void tampilkanEvent() {
     if (head == NULL) {
             cout << "\nBelum ada event.\n";
             return;
@@ -130,8 +130,8 @@ public:
             temp = temp->next;
         }
     }
-    // Anggota 3
-    void daftarPeserta() {}
+    // Rizkan: Fitur Daftar Peserta
+    void daftarPeserta() {
      if (head == NULL) {
             cout << "\nBelum ada event.\n";
             return;
@@ -169,8 +169,8 @@ public:
         cout << "\nEvent tidak ditemukan.\n";
     }
 
-    // Anggota 3
-    void lihatPeserta() {}
+    // Rizkan: Fitur Lihat Peserta
+    void lihatPeserta() {
        if (head == NULL) {
             cout << "\nBelum ada event.\n";
             return;
@@ -218,8 +218,8 @@ public:
 
         cout << "\nEvent tidak ditemukan.\n";
     }
-    // Anggota 4
-    void cariEvent() {}
+    // Elvan: Fitur Cari Event
+    void cariEvent() {
     if (head == NULL) {
             cout << "\nBelum ada event.\n";
             return;
@@ -256,8 +256,8 @@ public:
             cout << "\nEvent tidak ditemukan.\n";
     }
 
-    // Anggota 5
-    void hapusEvent() {}
+    // Ali: Fitur Hapus Event
+    void hapusEvent() {
      if (head == NULL) {
             cout << "\nBelum ada event.\n";
             return;
@@ -293,14 +293,12 @@ public:
 };
 
 
-
 int main() {
 
     EventManager sistem;
     int pilihan;
 
     do {
-
         
         cout << "====================================";
         cout << "\n SISTEM MANAJEMEN EVENT KAMPUS";
