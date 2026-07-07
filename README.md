@@ -3,6 +3,10 @@
 ## Deskripsi
 Program C++ untuk mengelola event kampus, panitia, dan peserta menggunakan Linked List dan Queue.
 
+## Dokumentasi Tambahan
+Untuk melihat laporan proyek, file presentasi silakan akses link berikut:
+- [Link Google Drive - Laporan & Materi Presentasi](https://drive.google.com/drive/folders/16ORsYEpMYcmzuDk5q7Cj5pPdOv-cjs3k?usp=drive_link)
+
 ## Fitur
 - Tambah Event
 - Lihat Event
